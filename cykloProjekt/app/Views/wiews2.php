@@ -48,7 +48,7 @@
         </tbody>
     </table>
 
-    <div style="margin-top: 20px;">
-        <?= $pager->links() ?>
-    </div>
+    <div style="margin: 20px 10px;">
+    <?= $pager->links('default', 'moje_strankovani') ?>
+</div>
 </div>
