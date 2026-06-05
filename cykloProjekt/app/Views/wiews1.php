@@ -4,8 +4,9 @@
      * @var \CodeIgniter\Pager\Pager $pager
      */
 ?>
-<link rel="stylesheet" href="<?= base_url('node_modules/flag-icons/css/flag-icons.min.css') ?>">
-<link rel="stylesheet" href="/kec/projektcyklo/cykloProjekt/obrazky/styl.css">
+<?= $this->extend('layout') ?>
+
+<?= $this->section('content') ?>
 
 <h1>Seznam jezdců z Francie</h1>
 
@@ -50,3 +51,5 @@
 <div class="strankovani-wrap">
     <?= $pager->links('default', 'moje_strankovani') ?>
 </div>
+
+<?= $this->endSection() ?>

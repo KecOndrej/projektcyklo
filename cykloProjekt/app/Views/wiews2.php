@@ -4,8 +4,9 @@
      * @var \CodeIgniter\Pager\Pager $pager
      */
 ?>
-<link rel="stylesheet" href="<?= base_url('node_modules/flag-icons/css/flag-icons.min.css') ?>">
-<link rel="stylesheet" href="/kec/projektcyklo/cykloProjekt/obrazky/styl.css">
+<?= $this->extend('layout') ?>
+
+<?= $this->section('content') ?>
 
 <div class="vypis-mesto">
     
@@ -52,3 +53,5 @@
         <?= $pager->links('default', 'moje_strankovani') ?>
     </div>
 </div>
+
+<?= $this->endSection() ?>
