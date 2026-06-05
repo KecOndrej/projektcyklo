@@ -37,7 +37,7 @@ class Controller1 extends BaseController
         $data['jezdci'] = $model->paginate(20); 
         $data['pager'] = $model->pager;
     
-        // Tady to posíláme do nového views2 šablony s tabulkou!
+        // Tady to posíláme do nového views2 šablony s tabulkou
         return view('wiews2', $data); 
     }
 }

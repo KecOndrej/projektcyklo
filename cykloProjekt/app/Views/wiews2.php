@@ -5,42 +5,42 @@
      */
 ?>
 <link rel="stylesheet" href="<?= base_url('node_modules/flag-icons/css/flag-icons.min.css') ?>">
+<link rel="stylesheet" href="/kec/projektcyklo/cykloProjekt/obrazky/styl.css">
 
-<div style="font-family: Arial, sans-serif; padding: 20px;">
+<div class="vypis-mesto">
     
-    
-    <h1 style="color: #333; margin-bottom: 20px;">Jezdci narození v městě <?= !empty($jezdci[0]['mesto_narodeni']) ? $jezdci[0]['mesto_narodeni'] : 'Vybrané místo' ?></h1>
+    <h1>Jezdci narození v městě <?= !empty($jezdci[0]['mesto_narodeni']) ? $jezdci[0]['mesto_narodeni'] : 'Vybrané místo' ?></h1>
 
-    <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+    <table class="tabulka-jezdcu">
         <thead>
-            <tr style="background-color: #0056b3; color: white; text-align: left;">
-                <th style="padding: 12px 15px;">Vlajka</th>
-                <th style="padding: 12px 15px;">Jméno a příjmení</th>
-                <th style="padding: 12px 15px;">Datum narození</th>
-                <th style="padding: 12px 15px;">Výška</th>
-                <th style="padding: 12px 15px;">Váha</th>
+            <tr>
+                <th>Vlajka</th>
+                <th>Jméno a příjmení</th>
+                <th>Datum narození</th>
+                <th>Výška</th>
+                <th>Váha</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach($jezdci as $rider): ?>
-                <tr style="border-bottom: 1px solid #e0e0e0;">
-                    <td style="padding: 12px 15px;">
+                <tr>
+                    <td>
                         <?php if (!empty($rider['country'])): ?>
-                            <span class="fi fi-<?= strtolower($rider['country']) ?>" style="border-radius: 2px;"></span>
+                            <span class="fi fi-<?= strtolower($rider['country']) ?>"></span>
                         <?php else: ?>
                             -
                         <?php endif; ?>
                     </td>
-                    <td style="padding: 12px 15px; font-weight: bold; color: #333;">
+                    <td class="jmeno-tabulka">
                         <?= $rider['first_name'] ?> <?= $rider['last_name'] ?>
                     </td>
-                    <td style="padding: 12px 15px;">
+                    <td>
                         <?= !empty($rider['date_of_birth']) ? date('d. m. Y', strtotime($rider['date_of_birth'])) : '???' ?>
                     </td>
-                    <td style="padding: 12px 15px;">
+                    <td>
                         <?= !empty($rider['height']) ? $rider['height'] . ' cm' : '???' ?>
                     </td>
-                    <td style="padding: 12px 15px;">
+                    <td>
                         <?= !empty($rider['weight']) ? $rider['weight'] . ' kg' : '???' ?>
                     </td>
                 </tr>
@@ -48,7 +48,7 @@
         </tbody>
     </table>
 
-    <div style="margin: 20px 10px;">
-    <?= $pager->links('default', 'moje_strankovani') ?>
-</div>
+    <div class="strankovani-wrap">
+        <?= $pager->links('default', 'moje_strankovani') ?>
+    </div>
 </div>
