@@ -1,14 +1,20 @@
 <?php
-    /**
-     * @var array $jezdci
-     * @var \CodeIgniter\Pager\Pager $pager
-     */
+/**
+ * @var array $jezdci
+ * @var \CodeIgniter\Pager\Pager $pager
+ */
 ?>
+
 <link rel="stylesheet" href="<?= base_url('node_modules/flag-icons/css/flag-icons.min.css') ?>">
 
 <div style="font-family: Arial, sans-serif; padding: 20px;">
-    
-    
+
+    <div style="margin-bottom: 15px;">
+        <a href="<?= base_url('index.php/controller1/vsechny') ?>" style="display: inline-block; background-color: #6c757d; color: white; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: bold; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            ⚙ Správa a úprava závodníků
+        </a>
+    </div>
+
     <h1 style="color: #333; margin-bottom: 20px;">Jezdci narození v městě <?= !empty($jezdci[0]['mesto_narodeni']) ? $jezdci[0]['mesto_narodeni'] : 'Vybrané místo' ?></h1>
 
     <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
